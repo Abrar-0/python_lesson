@@ -43,6 +43,11 @@ class EmployeeManagement:
                 self.employees.remove(em)
                 return True
         return False
+    
+    def update_salary(self, id, salary):
+        for em in self.employees:
+            if (em.get_employee_id() == id):
+                em.set_salary(salary)
 
     def list_employees(self):
         for em in self.employees:
@@ -63,9 +68,17 @@ emp3 = Employee("John Daaae", 1003, "UX Engineer", 40000)
 ems.add_employee(emp1)
 ems.add_employee(emp2)
 
-ems.list_employees()
+# ems.list_employees()
 
 # ems.remove_employee(1001)
 ems.add_employee(emp3)
+
+ems.list_employees()
+
+ems.update_salary(1003,50000)
+
+ems.list_employees()
+
+ems.remove_employee(1001)
 
 ems.list_employees()
